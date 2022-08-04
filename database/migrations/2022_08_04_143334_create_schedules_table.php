@@ -19,7 +19,9 @@ class CreateSchedulesTable extends Migration
             $table->time('time');
             $table->foreignId('team_id_home')->constrained('teams');
             $table->foreignId('team_id_away')->constrained('teams');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

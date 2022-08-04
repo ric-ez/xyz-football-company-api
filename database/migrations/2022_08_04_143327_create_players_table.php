@@ -20,7 +20,9 @@ class CreatePlayersTable extends Migration
             $table->string('weight');
             $table->enum('position', ['Penyerang', 'Gelandang', 'Bertahan', 'Penjaga Gawang']);
             $table->integer('number');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

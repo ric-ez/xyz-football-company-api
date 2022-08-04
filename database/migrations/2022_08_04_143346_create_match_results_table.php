@@ -18,7 +18,9 @@ class CreateMatchResultsTable extends Migration
             $table->foreignId('schedule_id')->constrained('schedules');
             $table->integer('score_home');
             $table->integer('score_away');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

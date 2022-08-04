@@ -20,7 +20,9 @@ class CreateTeamsTable extends Migration
             $table->string('founded_in');
             $table->string('hq_address');
             $table->string('hq_city');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
