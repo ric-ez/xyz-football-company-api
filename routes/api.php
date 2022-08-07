@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MatchResultController;
+use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('match-results', MatchResultController::class);
 Route::resource('teams', TeamController::class);
+Route::resource('schedules', ScheduleController::class);
