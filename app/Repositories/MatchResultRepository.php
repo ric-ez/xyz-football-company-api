@@ -32,6 +32,9 @@ class MatchResultRepository implements MatchResultRepositoryInterface
             }
 
             $match_result->top_scorer = $scorer;
+
+            $match_result->total_win_home = MatchResult::where('team_id_winning', $match_result->schedule->team_id_home)->count();
+            $match_result->total_win_away = MatchResult::where('team_id_winning', $match_result->schedule->team_id_away)->count();
         });
 
         return $match_results;
