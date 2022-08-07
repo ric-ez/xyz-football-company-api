@@ -18,7 +18,7 @@ class CreateMatchScoresTable extends Migration
             $table->foreignId('schedule_id')->constrained('schedules');
             $table->foreignId('team_id')->constrained('teams');
             $table->foreignId('player_id')->constrained('players');
-            $table->integer('score');
+            $table->integer('score')->default(1);
             $table->integer('score_time');
 
             $table->timestamps();

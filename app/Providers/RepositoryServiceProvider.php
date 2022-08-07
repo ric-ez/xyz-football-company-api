@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Interfaces\MatchResultRepositoryInterface;
+use App\Interfaces\MatchScoreRepositoryInterface;
 use App\Interfaces\ScheduleRepositoryInterface;
 use App\Interfaces\TeamRepositoryInterface;
 use App\Repositories\MatchResultRepository;
+use App\Repositories\MatchScoreRepository;
 use App\Repositories\ScheduleRepository;
 use App\Repositories\TeamRepository;
 use Illuminate\Support\ServiceProvider;
@@ -30,6 +32,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             ScheduleRepositoryInterface::class,
             ScheduleRepository::class
+        );
+        $this->app->bind(
+            MatchScoreRepositoryInterface::class,
+            MatchScoreRepository::class
         );
     }
 
