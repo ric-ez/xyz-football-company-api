@@ -36,4 +36,20 @@ class MatchResult extends Model
             return $this->schedule->team_away->name . ' Menang';
         }
     }
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($match_result) {
+            if ($match_result->score_home != $match_result->score_away) {
+                if ($match_result->score_home > $match_result->score_away) {
+                    $match_result->team_id_winning = $match_result->schedule->team_id_home;
+                    $match_result->team_id_losing = $match_result->schedule->team_id_away;
+                } else {
+                    $match_result->team_id_losing = $match_result->schedule->team_id_home;
+                    $match_result->team_id_winning = $match_result->schedule->team_id_away;
+                }
+            }
+        });
+    }
 }

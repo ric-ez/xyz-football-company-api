@@ -19,6 +19,9 @@ class CreateMatchResultsTable extends Migration
             $table->integer('score_home');
             $table->integer('score_away');
 
+            $table->foreignId('team_id_winning')->nullable()->constrained('teams');
+            $table->foreignId('team_id_losing')->nullable()->constrained('teams');
+
             $table->timestamps();
             $table->softDeletes();
         });
