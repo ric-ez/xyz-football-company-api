@@ -39,4 +39,9 @@ class MatchResultRepository implements MatchResultRepositoryInterface
 
         return $match_results;
     }
+
+    public function createMatchResult(array $matchResult)
+    {
+        return MatchResult::create($matchResult);
+    }
 }

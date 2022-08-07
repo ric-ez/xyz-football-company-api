@@ -21,4 +21,11 @@ class MatchResultController extends Controller
             'data'  => $this->matchResultRepository->getAllMatchResults()
         ]);
     }
+
+    public function store(Request $request)
+    {
+        return response()->json([
+            'data'  => $this->matchResultRepository->createMatchResult($request->all())
+        ]);
+    }
 }
